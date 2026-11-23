@@ -3,7 +3,7 @@
 Project akhir mata kuliah **Data Wrangling** (Semester Gasal 2026/2027).
 Pipeline end-to-end yang mengubah empat sumber data mentah yang berbeda format, resolusi, dan satuan menjadi **satu dataset bersih sel-grid × hari** untuk enam provinsi rawan karhutla (Riau, Jambi, Sumatera Selatan, Kalimantan Barat, Kalimantan Tengah, Kalimantan Selatan), periode 1 Januari – 30 September 2026.
 
-**Tim:** Ghita Natasha Putri · Sabrina Matrza Aulia · Lady Puspa Khansa Yuasa — Kelas INT25 — Kelompok: 4**
+**Tim:** Ghita Natasha Putri · Sabrina Matrza Aulia · Lady Puspa Khansa Yuasa — Kelas INT25 — Kelompok: 4
 
 ## Hasil ringkas
 
