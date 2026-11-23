@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+*.bak.ipynb
+.pytest_cache/
+
+# data besar tidak masuk GitHub (dikumpulkan lewat LMS / zip)
+data/demo/
+data/raw_sample/gee/*
+data/raw_sample/boundary/*
+data/raw_sample/static/*
+data/interim/*
+outputs/run_log.txt
+!.gitkeep

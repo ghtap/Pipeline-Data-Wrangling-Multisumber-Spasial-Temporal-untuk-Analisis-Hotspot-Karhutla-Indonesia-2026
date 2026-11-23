@@ -1,0 +1,74 @@
+{
+  "firms": {
+    "n_rows": 2613261,
+    "n_cols": 20,
+    "tanggal": {
+      "n_total": 2613261,
+      "n_non_iso": 0,
+      "pct_non_iso": 0.0,
+      "contoh_non_iso": []
+    },
+    "koordinat_di_luar_indonesia": 0,
+    "koordinat_tidak_numerik": 0,
+    "frp_negatif": 0,
+    "frp_missing": 0,
+    "duplikat_kunci_deteksi": 0,
+    "kategori_mentah": {
+      "confidence": {
+        "n": 2186978,
+        "l": 100431,
+        "h": 85834,
+        "100": 23755,
+        "67": 4445,
+        "69": 4364,
+        "66": 4350,
+        "68": 4327,
+        "70": 4290,
+        "72": 4268,
+        "65": 4253,
+        "64": 4243,
+        "71": 4239,
+        "73": 4220,
+        "63": 4199
+      },
+      "satellite": {
+        "N20": 1025794,
+        "N": 1022437,
+        "N21": 325012,
+        "Aqua": 151086,
+        "Terra": 88932
+      },
+      "instrument": {
+        "VIIRS": 2373243,
+        "MODIS": 240018
+      },
+      "daynight": {
+        "D": 1523905,
+        "N": 1089356
+      }
+    }
+  },
+  "gee": {
+    "chirps_rows": 6156969,
+    "era5_rows": 6156969,
+    "tanggal_chirps": {
+      "n_total": 6156969,
+      "n_non_iso": 0,
+      "pct_non_iso": 0.0,
+      "contoh_non_iso": []
+    },
+    "duplikat_cell_date_chirps": 0,
+    "duplikat_cell_date_era5": 0,
+    "precip_sentinel_atau_negatif": 0,
+    "t2m_k_missing": 0,
+    "t2m_k_sentinel": 76986,
+    "d2m_k_missing": 0,
+    "d2m_k_sentinel": 76986,
+    "soil_moist_missing": 0,
+    "soil_moist_sentinel": 76986,
+    "u10_missing": 0,
+    "u10_sentinel": 76986,
+    "v10_missing": 0,
+    "v10_sentinel": 76986
+  }
+}

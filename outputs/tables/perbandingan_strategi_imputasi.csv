@@ -1,0 +1,7 @@
+strategi,kausal,rmse_precip_mm,rmse_temp_c,rmse_rh_pct,rmse_wind_ms,rmse_soil_moist,nrmse_rata2
+interp_cell,False,6.3474,0.5941,4.2778,0.309,0.0119,0.4492
+ffill_cell,True,7.5915,0.7415,5.8348,0.3884,0.0191,0.5674
+ffill_then_province_date,True,7.5915,0.7441,5.8328,0.3884,0.0191,0.5677
+province_date_mean,True,4.5545,1.4972,6.3857,0.8428,0.0816,0.7744
+cell_median,True,6.2276,2.1189,19.4245,0.7765,0.172,1.3027
+global_mean,True,7.8479,2.4626,18.5669,1.0367,0.1742,1.4393

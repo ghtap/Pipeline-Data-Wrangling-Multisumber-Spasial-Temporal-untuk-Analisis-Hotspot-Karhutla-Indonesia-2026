@@ -1,0 +1,467 @@
+{
+  "mode": "real",
+  "stages": {
+    "1_ingest": {
+      "firms_rows_raw": 2613261,
+      "chirps_rows_raw": 6156969,
+      "era5_rows_raw": 6156969,
+      "grid_cells": 22553,
+      "n_source_files": 123
+    },
+    "2_profiling": {
+      "audit_mentah": {
+        "firms": {
+          "n_rows": 2613261,
+          "n_cols": 20,
+          "tanggal": {
+            "n_total": 2613261,
+            "n_non_iso": 0,
+            "pct_non_iso": 0.0,
+            "contoh_non_iso": []
+          },
+          "koordinat_di_luar_indonesia": 0,
+          "koordinat_tidak_numerik": 0,
+          "frp_negatif": 0,
+          "frp_missing": 0,
+          "duplikat_kunci_deteksi": 0,
+          "kategori_mentah": {
+            "confidence": {
+              "n": 2186978,
+              "l": 100431,
+              "h": 85834,
+              "100": 23755,
+              "67": 4445,
+              "69": 4364,
+              "66": 4350,
+              "68": 4327,
+              "70": 4290,
+              "72": 4268,
+              "65": 4253,
+              "64": 4243,
+              "71": 4239,
+              "73": 4220,
+              "63": 4199
+            },
+            "satellite": {
+              "N20": 1025794,
+              "N": 1022437,
+              "N21": 325012,
+              "Aqua": 151086,
+              "Terra": 88932
+            },
+            "instrument": {
+              "VIIRS": 2373243,
+              "MODIS": 240018
+            },
+            "daynight": {
+              "D": 1523905,
+              "N": 1089356
+            }
+          }
+        },
+        "gee": {
+          "chirps_rows": 6156969,
+          "era5_rows": 6156969,
+          "tanggal_chirps": {
+            "n_total": 6156969,
+            "n_non_iso": 0,
+            "pct_non_iso": 0.0,
+            "contoh_non_iso": []
+          },
+          "duplikat_cell_date_chirps": 0,
+          "duplikat_cell_date_era5": 0,
+          "precip_sentinel_atau_negatif": 0,
+          "t2m_k_missing": 0,
+          "t2m_k_sentinel": 76986,
+          "d2m_k_missing": 0,
+          "d2m_k_sentinel": 76986,
+          "soil_moist_missing": 0,
+          "soil_moist_sentinel": 76986,
+          "u10_missing": 0,
+          "u10_sentinel": 76986,
+          "v10_missing": 0,
+          "v10_sentinel": 76986
+        }
+      }
+    },
+    "3_cleaning_firms": {
+      "ringkasan": {
+        "baris_awal": 2613261,
+        "confidence_label_sebelum": 104,
+        "confidence_label_sesudah": 3,
+        "tanggal_format_diperbaiki": 0,
+        "tanggal_gagal_parse": 0,
+        "koordinat_tidak_valid_dibuang": 0,
+        "frp_di_luar_domain_jadi_nan": 2,
+        "di_luar_periode_dibuang": 1796165,
+        "duplikat_dibuang": 0,
+        "baris_akhir": 817096
+      }
+    },
+    "3_cleaning_meteo": {
+      "ringkasan": {
+        "chirps_tanggal_format_diperbaiki": 0,
+        "chirps_tanggal_gagal_parse": 0,
+        "chirps_precip_mm_sentinel_jadi_nan": 0,
+        "chirps_duplikat_persis_dibuang": 0,
+        "chirps_duplikat_cell_date_digabung_rata2": 0,
+        "era5_tanggal_format_diperbaiki": 0,
+        "era5_tanggal_gagal_parse": 0,
+        "era5_t2m_k_sentinel_jadi_nan": 76986,
+        "era5_d2m_k_sentinel_jadi_nan": 76986,
+        "era5_soil_moist_sentinel_jadi_nan": 76986,
+        "era5_u10_sentinel_jadi_nan": 76986,
+        "era5_v10_sentinel_jadi_nan": 76986,
+        "era5_duplikat_persis_dibuang": 0,
+        "era5_duplikat_cell_date_digabung_rata2": 0,
+        "rh_di_atas_100_dipotong": 10,
+        "nilai_di_luar_domain_jadi_nan": {
+          "temp_c": 0,
+          "dewpoint_c": 0,
+          "wind_ms": 0,
+          "soil_moist": 0,
+          "precip_mm": 0
+        },
+        "join_chirps_era5": {
+          "both": 6156969
+        },
+        "baris_cell_id_tidak_ada_di_grid_dibuang": 0,
+        "baris_akhir": 6156969
+      }
+    },
+    "3_missing": {
+      "baris_dengan_missing_apa_pun": 76986,
+      "laporan": [
+        {
+          "variabel": "precip_mm",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "sel_yang_seluruhnya_kosong": 0
+        },
+        {
+          "variabel": "temp_c",
+          "n_missing": 76986,
+          "pct_missing": 1.25,
+          "sel_yang_seluruhnya_kosong": 282
+        },
+        {
+          "variabel": "rh_pct",
+          "n_missing": 76986,
+          "pct_missing": 1.25,
+          "sel_yang_seluruhnya_kosong": 282
+        },
+        {
+          "variabel": "wind_ms",
+          "n_missing": 76986,
+          "pct_missing": 1.25,
+          "sel_yang_seluruhnya_kosong": 282
+        },
+        {
+          "variabel": "soil_moist",
+          "n_missing": 76986,
+          "pct_missing": 1.25,
+          "sel_yang_seluruhnya_kosong": 282
+        }
+      ],
+      "strategi_imputasi_terpilih": "ffill_cell",
+      "tabel_perbandingan": [
+        {
+          "strategi": "interp_cell",
+          "kausal": false,
+          "rmse_precip_mm": 6.3474,
+          "rmse_temp_c": 0.5941,
+          "rmse_rh_pct": 4.2778,
+          "rmse_wind_ms": 0.309,
+          "rmse_soil_moist": 0.0119,
+          "nrmse_rata2": 0.4492
+        },
+        {
+          "strategi": "ffill_cell",
+          "kausal": true,
+          "rmse_precip_mm": 7.5915,
+          "rmse_temp_c": 0.7415,
+          "rmse_rh_pct": 5.8348,
+          "rmse_wind_ms": 0.3884,
+          "rmse_soil_moist": 0.0191,
+          "nrmse_rata2": 0.5674
+        },
+        {
+          "strategi": "ffill_then_province_date",
+          "kausal": true,
+          "rmse_precip_mm": 7.5915,
+          "rmse_temp_c": 0.7441,
+          "rmse_rh_pct": 5.8328,
+          "rmse_wind_ms": 0.3884,
+          "rmse_soil_moist": 0.0191,
+          "nrmse_rata2": 0.5677
+        },
+        {
+          "strategi": "province_date_mean",
+          "kausal": true,
+          "rmse_precip_mm": 4.5545,
+          "rmse_temp_c": 1.4972,
+          "rmse_rh_pct": 6.3857,
+          "rmse_wind_ms": 0.8428,
+          "rmse_soil_moist": 0.0816,
+          "nrmse_rata2": 0.7744
+        },
+        {
+          "strategi": "cell_median",
+          "kausal": true,
+          "rmse_precip_mm": 6.2276,
+          "rmse_temp_c": 2.1189,
+          "rmse_rh_pct": 19.4245,
+          "rmse_wind_ms": 0.7765,
+          "rmse_soil_moist": 0.172,
+          "nrmse_rata2": 1.3027
+        },
+        {
+          "strategi": "global_mean",
+          "kausal": true,
+          "rmse_precip_mm": 7.8479,
+          "rmse_temp_c": 2.4626,
+          "rmse_rh_pct": 18.5669,
+          "rmse_wind_ms": 1.0367,
+          "rmse_soil_moist": 0.1742,
+          "nrmse_rata2": 1.4393
+        }
+      ],
+      "nilai_diimputasi_total": 307944,
+      "baris_yang_punya_imputasi": 76986,
+      "missing_tersisa": 0
+    },
+    "4_integration": {
+      "deteksi_firms_di_luar_grid_dibuang": 67787,
+      "deteksi_firms_dipetakan": 749309,
+      "pasangan_cell_date_dengan_hotspot": 111982,
+      "pasangan_hotspot_tanpa_data_cuaca": 0,
+      "deteksi_hilang_karena_tanpa_cuaca": 0,
+      "baris_sebelum_join": 6156969,
+      "baris_sesudah_join": 6156969,
+      "duplikasi_cell_date": 0,
+      "jumlah_sel": 22553,
+      "rentang_tanggal": [
+        "2026-01-01",
+        "2026-09-30"
+      ],
+      "persen_baris_ada_hotspot": 1.819
+    },
+    "5_outlier": {
+      "iqr": [
+        {
+          "variabel": "precip_mm",
+          "n_outlier": 279003,
+          "pct_outlier": 6.43,
+          "keputusan": "keep_flag"
+        },
+        {
+          "variabel": "temp_c",
+          "n_outlier": 262966,
+          "pct_outlier": 4.271,
+          "keputusan": "keep_flag"
+        },
+        {
+          "variabel": "rh_pct",
+          "n_outlier": 165379,
+          "pct_outlier": 2.686,
+          "keputusan": "keep_flag"
+        },
+        {
+          "variabel": "wind_ms",
+          "n_outlier": 197516,
+          "pct_outlier": 3.208,
+          "keputusan": "keep_flag"
+        },
+        {
+          "variabel": "soil_moist",
+          "n_outlier": 137135,
+          "pct_outlier": 2.227,
+          "keputusan": "keep_flag"
+        },
+        {
+          "variabel": "frp_sum",
+          "n_outlier": 14200,
+          "pct_outlier": 12.681,
+          "keputusan": "keep_flag"
+        }
+      ],
+      "isolation_forest_n_anomali": 30828,
+      "isolation_forest_pct": 0.501,
+      "baris_setelah_perlakuan": 6156969
+    },
+    "6_scaling": {
+      "kolom_diskalakan": [
+        "precip_mm",
+        "temp_c",
+        "rh_pct",
+        "wind_ms",
+        "soil_moist",
+        "frp_sum"
+      ],
+      "catatan": "parameter dari train saja; LightGBM tidak memakai scaling, LogReg memakai StandardScaler"
+    },
+    "7_features": {
+      "jumlah_baris_per_split": {
+        "train": 3946775,
+        "excluded": 1150203,
+        "val": 541272,
+        "test": 518719
+      },
+      "label_nominal_high_saja": false,
+      "fitur_historis": [
+        "rain_prev7_mm",
+        "rain_prev14_mm",
+        "rain_prev30_mm",
+        "hotspot_prev7",
+        "hotspot_prev14",
+        "frp_prev7",
+        "temp_prev7_mean",
+        "rh_prev7_mean",
+        "soil_prev7_mean",
+        "wind_prev7_mean"
+      ],
+      "baris_warmup_tanpa_fitur_lengkap": 676590,
+      "baris_tanpa_target_(7_hari_terakhir)": 157871,
+      "proporsi_kelas_positif": 0.0652,
+      "reshaping": [
+        "pivot_table provinsi x bulan",
+        "melt (unpivot) variabel cuaca",
+        "groupby mingguan"
+      ],
+      "fitur_kandidat": 21,
+      "fitur_terpilih": [
+        "precip_mm",
+        "temp_c",
+        "rh_pct",
+        "wind_ms",
+        "soil_moist",
+        "hotspot_count",
+        "dry_days_streak",
+        "rain_prev7_mm",
+        "rain_prev14_mm",
+        "rain_prev30_mm",
+        "hotspot_prev7",
+        "hotspot_prev14",
+        "temp_prev7_mean",
+        "rh_prev7_mean",
+        "soil_prev7_mean",
+        "wind_prev7_mean",
+        "lat",
+        "lon",
+        "province_code",
+        "month_2026"
+      ],
+      "fitur_dibuang": {
+        "frp_prev7": "redundan dg hotspot_prev7 (|rho|=1.00)"
+      }
+    },
+    "8_eda": {
+      "korelasi_target_top5": {
+        "hotspot_prev14": 0.481,
+        "hotspot_prev7": 0.473,
+        "hotspot_count": 0.387,
+        "rh_prev7_mean": -0.278,
+        "rain_prev30_mm": -0.277
+      },
+      "pasangan_terkorelasi_top3": [
+        {
+          "fitur_a": "soil_moist",
+          "fitur_b": "soil_prev7_mean",
+          "rho": 0.942,
+          "abs_rho": 0.942
+        },
+        {
+          "fitur_a": "rain_prev7_mm",
+          "fitur_b": "rain_prev14_mm",
+          "rho": 0.88,
+          "abs_rho": 0.88
+        },
+        {
+          "fitur_a": "rain_prev14_mm",
+          "fitur_b": "rain_prev30_mm",
+          "rho": 0.862,
+          "abs_rho": 0.862
+        }
+      ]
+    },
+    "9_export": {
+      "missing_variabel_cuaca_akhir": 0,
+      "duplikasi_cell_date_akhir": 0,
+      "baris_akhir": 6156969,
+      "kolom_akhir": 39,
+      "csv_sample_baris": 81900,
+      "file_mentah_utuh": true,
+      "file_hasil": [
+        "dataset_karhutla_2026_clean.parquet",
+        "dataset_karhutla_2026_clean_sample.csv",
+        "kamus_data.csv"
+      ]
+    },
+    "10_classification": {
+      "split": {
+        "n_train": 3946775,
+        "n_val": 541272,
+        "n_test": 518719,
+        "prevalensi_train": 0.0179,
+        "prevalensi_test": 0.2013,
+        "train_s.d.": "2026-07-24",
+        "val_rentang": [
+          "2026-08-01",
+          "2026-08-24"
+        ],
+        "test_rentang": [
+          "2026-09-01",
+          "2026-09-23"
+        ],
+        "fitur": [
+          "precip_mm",
+          "temp_c",
+          "rh_pct",
+          "wind_ms",
+          "soil_moist",
+          "hotspot_count",
+          "dry_days_streak",
+          "rain_prev7_mm",
+          "rain_prev14_mm",
+          "rain_prev30_mm",
+          "hotspot_prev7",
+          "hotspot_prev14",
+          "temp_prev7_mean",
+          "rh_prev7_mean",
+          "soil_prev7_mean",
+          "wind_prev7_mean",
+          "lat",
+          "lon",
+          "province_code",
+          "month_2026"
+        ]
+      },
+      "metrik_uji": {
+        "baseline_prevalensi": {
+          "pr_auc": 0.2013,
+          "precision": 0.2013,
+          "recall": 1.0,
+          "f1": 0.3351,
+          "threshold": 0.0
+        },
+        "logreg_scaled": {
+          "pr_auc": 0.6292,
+          "precision": 0.4453,
+          "recall": 0.7441,
+          "f1": 0.5572,
+          "threshold": 0.9597,
+          "roc_auc": 0.8342
+        },
+        "lightgbm": {
+          "pr_auc": 0.6587,
+          "precision": 0.487,
+          "recall": 0.728,
+          "f1": 0.5836,
+          "threshold": 0.1636,
+          "roc_auc": 0.8455
+        }
+      }
+    }
+  },
+  "runtime_seconds": 531.5
+}

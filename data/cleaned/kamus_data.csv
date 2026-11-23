@@ -1,0 +1,40 @@
+kolom,tipe,deskripsi,satuan,sumber,dipakai_model
+cell_id,object,ID sel grid ~5 km (kunci bersama cell_id+date),-,grid,False
+date,datetime64[ns],Tanggal pengamatan (YYYY-MM-DD),tanggal,-,False
+province,object,Provinsi tempat sel berada,-,geoBoundaries / grid,False
+lat,float64,Lintang pusat sel,derajat,grid,True
+lon,float64,Bujur pusat sel,derajat,grid,True
+precip_mm,float32,Curah hujan harian,mm/hari,CHIRPS (via GEE),True
+temp_c,float32,Suhu udara 2 m (dari Kelvin),°C,ERA5-Land (via GEE),True
+rh_pct,float32,"Kelembapan relatif (dihitung dari suhu & titik embun, rumus Magnus)",%,ERA5-Land (turunan),True
+wind_ms,float32,Kecepatan angin 10 m = sqrt(u^2+v^2),m/s,ERA5-Land (turunan),True
+soil_moist,float32,Kelembapan tanah lapisan 1,m3/m3,ERA5-Land (via GEE),True
+n_imputed,int8,Jumlah variabel cuaca yang diisi imputasi pada baris ini,jumlah,hasil wrangling,False
+hotspot_count,int32,Jumlah deteksi hotspot di sel pada tanggal tsb (0 = tidak ada deteksi),jumlah,NASA FIRMS,True
+frp_sum,float32,Total Fire Radiative Power deteksi di sel-tanggal,MW,NASA FIRMS,False
+frp_max,float32,FRP maksimum deteksi di sel-tanggal,MW,NASA FIRMS,False
+n_high_conf,int32,Jumlah deteksi berkepercayaan tinggi,jumlah,NASA FIRMS,False
+rain_prev7_mm,float32,Akumulasi hujan 7 hari sebelumnya,mm,fitur turunan,True
+rain_prev14_mm,float32,Akumulasi hujan 14 hari sebelumnya,mm,fitur turunan,True
+rain_prev30_mm,float32,Akumulasi hujan 30 hari sebelumnya,mm,fitur turunan,True
+dry_days_streak,float32,Hari kering berturut-turut sampai hari t (hujan < 1 mm),hari,fitur turunan,True
+n_nominal_high,int32,Jumlah deteksi berkepercayaan nominal/tinggi,jumlah,NASA FIRMS,False
+split,object,Pembagian waktu: train (sebelum Agu-7hari) / val (Agu) / test (Sep) / excluded,kategori,penanda,False
+hotspot_prev7,float32,Jumlah hotspot 7 hari sebelumnya,jumlah,fitur turunan,True
+hotspot_prev14,float32,Jumlah hotspot 14 hari sebelumnya,jumlah,fitur turunan,True
+frp_prev7,float32,Total FRP 7 hari sebelumnya,MW,fitur turunan,False
+temp_prev7_mean,float32,Rata-rata suhu 7 hari sebelumnya,°C,fitur turunan,True
+rh_prev7_mean,float32,Rata-rata RH 7 hari sebelumnya,%,fitur turunan,True
+soil_prev7_mean,float32,Rata-rata kelembapan tanah 7 hari sebelumnya,m3/m3,fitur turunan,True
+wind_prev7_mean,float32,Rata-rata kecepatan angin 7 hari sebelumnya,m/s,fitur turunan,True
+month_2026,int8,Bulan pengamatan,1-12,fitur turunan,True
+province_code,int8,Kode numerik provinsi (urutan di config.PROVINCES),kode,fitur turunan,True
+y_hotspot_next7,Int8,"TARGET: 1 bila ada >=1 hotspot pada t+1..t+7, 0 bila tidak; kosong bila 7 hari ke depan belum lengkap",0/1,fitur turunan,False
+warmup,bool,"True = 14 hari awal, fitur historis belum lengkap (jangan dipakai modeling)",bool,penanda,False
+out_multivariat,bool,Penanda anomali multivariat (Isolation Forest),bool,penanda outlier,False
+out_precip_mm,bool,Penanda outlier IQR untuk variabel terkait,bool,penanda outlier,False
+out_temp_c,bool,Penanda outlier IQR untuk variabel terkait,bool,penanda outlier,False
+out_rh_pct,bool,Penanda outlier IQR untuk variabel terkait,bool,penanda outlier,False
+out_wind_ms,bool,Penanda outlier IQR untuk variabel terkait,bool,penanda outlier,False
+out_soil_moist,bool,Penanda outlier IQR untuk variabel terkait,bool,penanda outlier,False
+out_frp_sum,bool,Penanda outlier IQR untuk variabel terkait,bool,penanda outlier,False

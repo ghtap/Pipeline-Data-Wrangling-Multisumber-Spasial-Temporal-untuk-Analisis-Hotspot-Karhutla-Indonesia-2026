@@ -1,0 +1,22 @@
+fitur,status,alasan,korelasi_spearman_dg_target,mutual_information
+frp_prev7,dibuang,redundan dg hotspot_prev7 (|rho|=1.00),0.2304,
+hotspot_prev14,dipertahankan,,0.2304,0.01021
+hotspot_prev7,dipertahankan,,0.231,0.00875
+month_2026,dipertahankan,,0.0848,0.00818
+rh_pct,dipertahankan,,-0.0976,0.00617
+dry_days_streak,dipertahankan,,0.0985,0.00584
+hotspot_count,dipertahankan,,0.2042,0.0055
+rh_prev7_mean,dipertahankan,,-0.0996,0.00516
+rain_prev14_mm,dipertahankan,,-0.0914,0.00512
+lon,dipertahankan,,-0.0091,0.00472
+precip_mm,dipertahankan,,-0.0846,0.00457
+rain_prev7_mm,dipertahankan,,-0.0934,0.00454
+soil_moist,dipertahankan,,-0.0909,0.0045
+soil_prev7_mean,dipertahankan,,-0.0834,0.00363
+province_code,dipertahankan,,-0.0029,0.00328
+temp_c,dipertahankan,,0.0698,0.00321
+wind_prev7_mean,dipertahankan,,0.0724,0.0025
+temp_prev7_mean,dipertahankan,,0.0714,0.00241
+wind_ms,dipertahankan,,0.0695,0.00224
+rain_prev30_mm,dipertahankan,,-0.0788,0.00221
+lat,dipertahankan,,0.0005,0.0

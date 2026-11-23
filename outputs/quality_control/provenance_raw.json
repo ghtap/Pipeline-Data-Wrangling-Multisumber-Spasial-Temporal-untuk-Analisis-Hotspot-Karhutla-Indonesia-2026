@@ -1,0 +1,743 @@
+{
+  "raw_dir": "raw_sample",
+  "files": [
+    {
+      "source": "NASA FIRMS",
+      "file": "firms\\firms_raw.csv",
+      "size_bytes": 275382531,
+      "sha256": "810efa09a33ad3642bf9534f5ad4beffcf0ee5fd034e3bcf68ae2d209abc1d85"
+    },
+    {
+      "source": "grid (DIMAS-TI)",
+      "file": "static\\grid.csv",
+      "size_bytes": 953251,
+      "sha256": "2e6875ba854309d65066469da4ce5cf8ae2ed16085bd3cf4dba95bfc8902436e"
+    },
+    {
+      "source": "geoBoundaries",
+      "file": "boundary\\geoBoundaries-IDN-ADM1-all.zip",
+      "size_bytes": 15160109,
+      "sha256": "f495a6a3b1f6c630f63de6037895b2107ac3a8e535b04ffa41d018520768d3fc"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260101_20260115_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3467015,
+      "sha256": "1cb820ba23c4ce4f74b3726f3c8f9f3e5462cd58f349e19ea950d1f4d6f2451c"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260101_20260115_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10340384,
+      "sha256": "f921778787c6fcd498feb9c289a3b851a336fb271b4a021835f281803a937488"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260101_20260115_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2596675,
+      "sha256": "0caaa3095fc629bb56a6418ed1477072f997b504c0cd0c5195741c2ed54ac22a"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260101_20260115_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10790429,
+      "sha256": "bb205727059d3a1adc3a142cb0c29cedf6ae5b7e6a72f88e627b99573331c21e"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260101_20260115_riau_c00000_757a06.csv",
+      "size_bytes": 6248727,
+      "sha256": "5fad3c311a9085abbaf421f36efd48265c8f385c6d0fe2b430dd2d0534224ae4"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260101_20260115_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 6005920,
+      "sha256": "c4cb380071bf6232b9b218ade2aa8d2ebddc4a27ce9820094b9b1e37f9a65633"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260115_20260129_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3448904,
+      "sha256": "ae612bf21285f7db731ac708717f62d7373cd0f47429e0456195b9aeb0a1f319"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260115_20260129_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10189948,
+      "sha256": "f66771ae1f52b58852eb2ddaa0d253a86c3341394e4a3889c32c39fb6d30c260"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260115_20260129_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2603100,
+      "sha256": "e5596b023b79e1c5303287da0bc161669962656a9939f07c42b8fd28813d4689"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260115_20260129_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10766617,
+      "sha256": "70aecb553e0790b5c563bda6215f2bb7ce23c15422e527015360b9cf3abc1bc2"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260115_20260129_riau_c00000_757a06.csv",
+      "size_bytes": 6216364,
+      "sha256": "c4588ae0af9e224ef50bcecd5253206192e1e5562d9adce4f4cfe1086d127501"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260115_20260129_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 5995612,
+      "sha256": "a9ad297c522bbc42fc829a90d1a630b520009183dcfdd45ab1f5b956d4e5cec7"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260129_20260212_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3450645,
+      "sha256": "aaa21f6c06d3c6ca87e3cd3447f89ae85bbc6e17e7a9d5473006a06ed0b7e4a3"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260129_20260212_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10375504,
+      "sha256": "678fec9aebc4835bd98f3c85adffa57c3259ef27eed8968e4201e2def83f3c81"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260129_20260212_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2614454,
+      "sha256": "f4cd6ddbe7a8a783086b333e84096525ef146e6732fa2c675348ffffdedcdf85"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260129_20260212_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10883166,
+      "sha256": "f36a8c3bfa1f901b237d3d4ebe3c175423d1032547f7bddec652537fc0e476a4"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260129_20260212_riau_c00000_757a06.csv",
+      "size_bytes": 6156067,
+      "sha256": "f4441f6993fbdd3571c254896961cd40301dfa74b0890ce189c7f2f8a136be43"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260129_20260212_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 6022173,
+      "sha256": "77b31365c5a60ad97b4c9007e8fb2f69fa122554009f7f902c72f0a16ebd064d"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260212_20260226_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3476326,
+      "sha256": "cf0dbb35aa937ba2c714e44c91a488d894422c1b5208bf699241cb43bd7f0996"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260212_20260226_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10393463,
+      "sha256": "ac54960b29fc0b81ffc04f7e8c22fdde01ea0ecfad03aaf7fd117c37655f5cb7"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260212_20260226_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2612617,
+      "sha256": "5aa8aabb3f24b25a78749bf79d474fc5720ec77c28725a6b4ff05626c216e1e0"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260212_20260226_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10877608,
+      "sha256": "17bd69d9bb8e1e1dc82347419ebf701e4c6d3fa157f1b1b7d815607345f40bea"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260212_20260226_riau_c00000_757a06.csv",
+      "size_bytes": 6286099,
+      "sha256": "103ff6c4af2aff772bb5fce450b19f20ca84f10463d907cbd11946d24228548f"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260212_20260226_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 6020946,
+      "sha256": "edd60c0ecf126e5cd029bb8a1961eb8bf7204093918a3493d0de4cbe304b6ae0"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260226_20260312_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3469278,
+      "sha256": "fd798ca7788bce25629051eb8526a3b3d5a8e2b1f3481538ea1aeed37bb62f1f"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260226_20260312_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10358368,
+      "sha256": "9f03750515f942b69c8db17f127492cd48be7b49269ce06b1c96cf8d012de151"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260226_20260312_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2605765,
+      "sha256": "40d91d2e69fef8e6b591a270c2208fd6d6985f5c67b12e51cad483e0c16f1550"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260226_20260312_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10849792,
+      "sha256": "90e231f0d8d343359b022f6444e2a858ce6801d4931e1f6abfe0f64978222c7f"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260226_20260312_riau_c00000_757a06.csv",
+      "size_bytes": 6229246,
+      "sha256": "09b63a1813bf650d300eaa980ea9e310ee238c657c0831400cb0e96cefabb6d0"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260226_20260312_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 6021414,
+      "sha256": "a32a37d0803face8b426e9112364eb34c728ace3c8fa0df2af9c49c4d7c698b3"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260312_20260326_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3483351,
+      "sha256": "b64901a3d519fc1adfbd2b63b8cf4104038cbe3ba2b759cb1ce89f8b7b185d65"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260312_20260326_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10276596,
+      "sha256": "c6e5b871b071b5df9e7af3bb2331a13fcfdd251912ac3558fa819470effbef04"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260312_20260326_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2622018,
+      "sha256": "c7b834fc0d3cde7203f40c37c6497d6ab7ba6e49770f89e98db17d8925ec6331"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260312_20260326_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10870629,
+      "sha256": "3bb6a541728cb654a510a86a06bcc7e236b7b11c3d408bacfcc5e41d7828eea8"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260312_20260326_riau_c00000_757a06.csv",
+      "size_bytes": 6239161,
+      "sha256": "1be28d733d70ccbdaa1c071198298dce44554f0be1917c7dac8cfbb7b7cc580a"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260312_20260326_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 6039297,
+      "sha256": "552096608b6cdb0e860d2065a412a83f6c4d106c1a854e4eeaaa6dfc5d3f53ce"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260326_20260409_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3504899,
+      "sha256": "81e9e37eacd43c4b6bb02f8dc147ab5670f7e9ae4b03606ca3c954bcd9e6780c"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260326_20260409_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10439742,
+      "sha256": "cc7c5dc88b9c5f0fc18f9e18408d80526eb20d3e99ddc8cc0ee2a5cc025c8c0b"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260326_20260409_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2636407,
+      "sha256": "51de38f1563209c5a57489f3cc01397f98c4a8d3e6ac752122561544ce55db61"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260326_20260409_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10940330,
+      "sha256": "53366dab959d86b60edd0c430081fdef5ea3fad952493f17a540f56e5277587a"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260326_20260409_riau_c00000_757a06.csv",
+      "size_bytes": 6310224,
+      "sha256": "95055e5cb352174a38f05855f87cfd7bc1b1faecf80f6adfae164258cf2dc1e0"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260326_20260409_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 6072973,
+      "sha256": "e4e5666b2e41df1a885572033f819ef7582bfe26179863eea735fea96b45454b"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260409_20260423_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3500162,
+      "sha256": "0626c402866390a2249c943f7d5e9dd5a355d2aadfac24ba579e919bfdcfedd5"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260409_20260423_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10424505,
+      "sha256": "bf1be3033475009866f51b3ad0caa074508a4f033730bda6b0b094b15c9a30bd"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260409_20260423_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2630581,
+      "sha256": "da95b3c376eba23458f4bd9d8db5b7610e6b496ebcb850f3a4a9a8541136cd25"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260409_20260423_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10926074,
+      "sha256": "71384689f2197d750031329ee3f5175b56c7e0f43ab918d1e0610b0518b0d7a9"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260409_20260423_riau_c00000_757a06.csv",
+      "size_bytes": 6312119,
+      "sha256": "76735efdfd2a52976e38242cfa6972831e90dc075275f4814781ff30bce71b14"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260409_20260423_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 6058385,
+      "sha256": "0f6532843d89525bc98e5bce1a87c9ff014f628a05afc3ccbb4b1419a9101d7c"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260423_20260507_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3508691,
+      "sha256": "b4e921b7af907ff9b2eb8c9918213520464f487191c6f7fc2896740cae9afa04"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260423_20260507_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10455954,
+      "sha256": "37d3c62978a7aff5659f238b699f7ee7942832f1aa585e92aba975d1d65392af"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260423_20260507_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2627261,
+      "sha256": "2d1ce7e7c395f06bd6c136b767e2d0b22198ba0fc076f81fb50caf4b331e1997"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260423_20260507_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10889499,
+      "sha256": "5b21f8aa944180e2560dea36558428293b8f645327a69a2e4057b80ae53deeee"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260423_20260507_riau_c00000_757a06.csv",
+      "size_bytes": 6327589,
+      "sha256": "2be168317e1d638b9345cd092291464f33cc240a4bfc3389b30f18f647aab32f"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260423_20260507_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 6077108,
+      "sha256": "95dd5fd9c726df19e291a06509e514bd3e2556e0a83b645b14c85532eaabdcdc"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260507_20260521_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3485061,
+      "sha256": "cfc7bfc06496e07f0e1d27eef07ed556bd965dc9b481157ef82fe34844ffa83b"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260507_20260521_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10400382,
+      "sha256": "5310875eeebd1d3f60a8ea02196a35fd65bd733029634300e8eafb3c19a490a9"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260507_20260521_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2615161,
+      "sha256": "d533ebcdfa0c7efa7e9065120eb2e31e9dc3e16b92fa071825957570ca5b7c71"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260507_20260521_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10894724,
+      "sha256": "4cef8f1f68660abdd8741e3dd838909e820f112fd3ef3c1b3679cfd83f2edde2"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260507_20260521_riau_c00000_757a06.csv",
+      "size_bytes": 6272254,
+      "sha256": "b2fd14a0b09de16af4202f3be3c4d3d6bbab15597bba9043b1e92ae17fa6ec3c"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260507_20260521_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 6048089,
+      "sha256": "c144dbbfc586fe88a68d8414c238ce658cd1513ed265087468394ff1d375c6e6"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260521_20260604_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3467122,
+      "sha256": "5c985abbb012414947187b7ad6d6045fd5b5803536f21ee6ca7f642115ba0380"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260521_20260604_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10319414,
+      "sha256": "170d4efab88ae712ccc9240fbe8b8e5a34cd1cf641f6b77b2fbf4802bef2a800"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260521_20260604_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2595641,
+      "sha256": "50c896828d34cf738eb1ef72b8d89adb9ff35667e0593f4f39fd939ec7bf0917"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260521_20260604_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10827551,
+      "sha256": "5a57734b1acd6766138acc7908906e799361da426e616f5fc70bf6b42831e9ae"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260521_20260604_riau_c00000_757a06.csv",
+      "size_bytes": 6267083,
+      "sha256": "6bd7076d7b8cb7045845885f2cb475cc703e0e01c9078c8aa4786c1ffc0a9a64"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260521_20260604_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 5938249,
+      "sha256": "c554332f2686645b09daf0983d3b9410db02f26c588b599f215175a225f7d815"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260604_20260618_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3426630,
+      "sha256": "b31a53dab4acf52a7e3f33e2316ffe77b1d05ee81aa565bd40155d4739cd38e1"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260604_20260618_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10348636,
+      "sha256": "0fd5f303000ed85bbc5226ba661b6c90e7c41f5c3c3c4bace67f9092fccf38a1"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260604_20260618_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2570818,
+      "sha256": "dda7513f5a568149fe6012fe27fb54c3dbc5d2027a56b08077c4a870a1436c43"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260604_20260618_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10781899,
+      "sha256": "50c163cf321ddfcdd2d61c632401a44887361ca0d9c2eb8e1fb9e3f3007e1d89"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260604_20260618_riau_c00000_757a06.csv",
+      "size_bytes": 6227438,
+      "sha256": "8e51435e17a6e127b966ab8910480b13d9277146ca3d1c752a6150576876ee94"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260604_20260618_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 5945748,
+      "sha256": "3dba333f9e7dc2e6ba312e63b8cc3fc2c2385cffd2918f9d2c2cc6956b7038b9"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260618_20260702_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3451805,
+      "sha256": "77e8305dcba0d03e8b2a3b89a6caba2201b66f7808647faf01f8d10c42d13942"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260618_20260702_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10298138,
+      "sha256": "8f6a2de7bb11bbc5a4a1165ea34a55d7bbaa3d42a0987e9718c2d3805992518f"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260618_20260702_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2566283,
+      "sha256": "d03e005348ae7e3e83e0f21004f5159bd36029e4c17a302c55ddbc79c193a60c"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260618_20260702_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10743805,
+      "sha256": "87fa187f208c8999f77396635da195f83361ecdf799ad5ab491a3a0738f1538c"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260618_20260702_riau_c00000_757a06.csv",
+      "size_bytes": 6236225,
+      "sha256": "04ec2e964cc3c1cdbade17586e6849cf3cf05dc05ba87e2ac4c14f1a050a24fc"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260618_20260702_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 5970603,
+      "sha256": "b009bf389d309afda66f4aa4d140c7fdaa88d32a51a0dd0a74f6964383d44b5d"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260702_20260716_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3388029,
+      "sha256": "743401ee3465cfdf8fa68cf650a0e780560ba75d3146bda23dc950b5f226a707"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260702_20260716_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10049225,
+      "sha256": "804de5bc9129c809d10f452fabe5f782280c532684bb2daa234ac61f8c9ee361"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260702_20260716_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2529070,
+      "sha256": "95fb346d19856ee4810cc6f8aee233ee5ecf300547b002c0a554fb3314232ede"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260702_20260716_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10479352,
+      "sha256": "c1f9f98e24274c54222d03ff4c10ab71821ea56f81b8a3f4e866bad95fa344a8"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260702_20260716_riau_c00000_757a06.csv",
+      "size_bytes": 6186263,
+      "sha256": "15bcca917915d711e1e5d34e31349264ea779e636918cfd3fda782ecc97b1958"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260702_20260716_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 5785764,
+      "sha256": "d77b4cb78759a949ef5873a3a11e91bca090ff7d7ba0a6323aca0030d8999812"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260716_20260730_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3431303,
+      "sha256": "ea7bacd6e3cca51aceb11a53483b853cf5adbd580ef558cdda6c6f52559c6b2a"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260716_20260730_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10225657,
+      "sha256": "d650f90a3a17df14bce2ebb5aa0effc15e31604bd2e8a5cefb67815e2ba19212"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260716_20260730_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2579868,
+      "sha256": "0a02ebd2f2440089c69df0e1f2faec89677ce43560776fb10812fd17324ba892"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260716_20260730_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10667300,
+      "sha256": "ae00c52cc1c5cffb532eaf99f5b0848407795166a543ebe1072326fe2dc83ab7"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260716_20260730_riau_c00000_757a06.csv",
+      "size_bytes": 6268953,
+      "sha256": "785c204b10bacaeb929295d4f2bbfeb9615a9c24f5ffacd9a93b7248f6cea4b4"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260716_20260730_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 5888365,
+      "sha256": "50348682f6e6bd144c35b36b94c25c7edebf5a12150b154affd894e1b1be8088"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260730_20260813_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3433224,
+      "sha256": "5e9c12284e85dbee0e4d3dc624a167eeef4f60eb4a108ec392799e91f055b8b9"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260730_20260813_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10284171,
+      "sha256": "0989277a19235b33dd59ca29fa185a05a77c78e2b61538c8770aa4616e4357ce"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260730_20260813_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2595474,
+      "sha256": "10e5c77ce6df20e0c5ed81f53cfa5a9e0ab6ba66644b9e4d85a1d602a1ecb875"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260730_20260813_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10778471,
+      "sha256": "9eb6dd7f2059a94ef1450c3d22a4ee94825686b7ee96d2624d53794704d32dda"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260730_20260813_riau_c00000_757a06.csv",
+      "size_bytes": 6207354,
+      "sha256": "939100f7cb2b9188444d9c3022d6c349b9390dd1f784a76ccce1e901e08c5c15"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260730_20260813_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 5923588,
+      "sha256": "1465cbd4ea318ad6f03610f81f9758e1048b6af2b58e7fd0ce1d79b7c4d0727e"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260813_20260827_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3395454,
+      "sha256": "c7ebed9e28900493bf10140c14d0b597a94f57382865e54f55e8f8c95a8f3ce8"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260813_20260827_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10100766,
+      "sha256": "46fa60158efc4c9906478ce135d5ef6a40f8d239089f857dde228abe5ba10ed1"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260813_20260827_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2556581,
+      "sha256": "1228bf0febd89a752308cbf6c895ab3e733782f44b41894740bb09c6319e19f4"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260813_20260827_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10612366,
+      "sha256": "ee9bf04d1c4975184e518511ccb32fcba289b965db8a60a530ccc8603ea17e41"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260813_20260827_riau_c00000_757a06.csv",
+      "size_bytes": 6148717,
+      "sha256": "2f054dde36bd0fb6b1dcc8ab0d007a5ce8d7c7cb2ed4a3d4f6ca43cc16e56340"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260813_20260827_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 5848525,
+      "sha256": "db128d4a508bd697bcd0d4fb9f47e68712d759e21e2b8de565ccf3b5b2c0791e"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260827_20260910_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3354472,
+      "sha256": "6cfad49aa493b8c8c837245d42d797a79cb9d6cc5ed2ecb9a7a2ac85588b9605"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260827_20260910_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10070240,
+      "sha256": "5bf10fcc7e61c8307381ed3f54c057afe425fdbe4ba46b69a8d21269a07232b0"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260827_20260910_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2516406,
+      "sha256": "60b24b45d8be57a15eba05381749ad6a949bbe6f34454b86e6d027e4a0ae8c34"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260827_20260910_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10488573,
+      "sha256": "c7e1f5df5e2e37114f11e70ba7335c12e5e6f2a90d2dc3baa1b9af8c05b20514"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260827_20260910_riau_c00000_757a06.csv",
+      "size_bytes": 6140587,
+      "sha256": "ce197131537bae7591199e9a76011e498c4e59a2e6fc1ef3b7808ac888216821"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260827_20260910_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 5799391,
+      "sha256": "17c2df203e1e650984b058318e1679c6802ab524df91e0cc653ba232a37e1198"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260910_20260924_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 3436456,
+      "sha256": "a0b32fdb020fb93ebb24fb25975af9633aafac229c07a186f1030b3e0a1afafd"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260910_20260924_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 10319237,
+      "sha256": "47176e761db2072bf821611b90cc44c636f03c43d7249cfdb00b42d8a6ccbb6c"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260910_20260924_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 2555199,
+      "sha256": "ce4d65cbe6b18539280f72addeb41a217f3e753d7d386b1d959c5a834da64536"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260910_20260924_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 10642386,
+      "sha256": "33a08ad9f791b589c7c7a47315569cfbb235c198508d4ff946ab9ed257be3d4c"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260910_20260924_riau_c00000_757a06.csv",
+      "size_bytes": 6241666,
+      "sha256": "24ef73584b13c811aab4c18085f7979e0fab310cf138a37255a5adf507df8364"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260910_20260924_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 5907133,
+      "sha256": "f08ab5c8f2ddb118558a6458ebff9d55e104926e532bccb9aa851b7273b2a0cc"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260924_20261001_jambi_c00000_bd6eb0.csv",
+      "size_bytes": 1742227,
+      "sha256": "2fdf659937143f45b90a74edbb7f15eb91d5057a4d1b12388a0ec2df0fe2e050"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260924_20261001_kalimantan_barat_c00000_65a95b.csv",
+      "size_bytes": 5198557,
+      "sha256": "cb28a77548f536ad01c9ac2f38371dc91cec03e1f83f0c2a4a06105f53a9dd32"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260924_20261001_kalimantan_selatan_c00000_f63bd6.csv",
+      "size_bytes": 1298355,
+      "sha256": "276612708f04ac480047d39f1d0c3c5b4dd46883825dfc1427c1ac487cb5816c"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260924_20261001_kalimantan_tengah_c00000_deff48.csv",
+      "size_bytes": 5410318,
+      "sha256": "adda3c71578a511c7c52217c7c2a7a54372df660db198e5b4f7eb9d31152287e"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260924_20261001_riau_c00000_757a06.csv",
+      "size_bytes": 3147743,
+      "sha256": "3a10f39a8aacb05d91f7770a4ba00422a03a74ea65026d43a1b3b6dbd25ef899"
+    },
+    {
+      "source": "GEE (CHIRPS + ERA5-Land)",
+      "file": "gee\\gee26_20260924_20261001_sumatera_selatan_c00000_167195.csv",
+      "size_bytes": 2966307,
+      "sha256": "4c789cdecebb3657ffd40f5c5a1eec992e8a238b15736070c2c0f6142d6ca599"
+    }
+  ]
+}
