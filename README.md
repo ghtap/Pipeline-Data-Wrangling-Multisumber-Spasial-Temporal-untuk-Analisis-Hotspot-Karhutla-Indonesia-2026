@@ -88,4 +88,3 @@ Lalu buka `notebooks/Data_Wrangling_Karhutla_2026.ipynb` dan **Run All**. Nama k
 `01_GAP_ANALISIS` · `02_PEMETAAN_DIMASTI_KE_UAS` · `03_ALUR_PRESENTASI_8_MENIT` · `04_CHEAT_SHEET_TANYA_JAWAB` · `05_CHECKLIST_PENGUMPULAN` · `06_KONTRIBUSI_ANGGOTA` · `07_KERANGKA_LAPORAN`
 
 ## Asal proyek dan pemanfaatan AI
-Pipeline ini mengadaptasi alur data dari penelitian sebelumnya (DIMAS-TI) dan **dijalankan ulang dari data mentah** untuk project ini; angka penelitian lama hanya dipakai sebagai rujukan pembanding. Kerangka kode pipeline disusun dengan bantuan asisten AI (Claude, Anthropic); seluruh kode dijalankan, diperiksa, dan hasilnya ditafsirkan oleh tim.
