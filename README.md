@@ -1,76 +1,91 @@
-# UAS Data Wrangling — Pipeline Karhutla 2026
+# Pipeline Data Wrangling Multisumber Spasial-Temporal untuk Analisis Hotspot Karhutla Indonesia 2026
 
-Pipeline data wrangling multisumber spasial-temporal (NASA FIRMS + CHIRPS + ERA5-Land + geoBoundaries) untuk 6 provinsi,
-Jan–Sep 2026. Mengikuti **10 tahap pada Bab III proposal**. Hanya bagian pipeline data (tanpa aplikasi web / model penelitian lama).
+Project akhir mata kuliah **Data Wrangling** (Semester Gasal 2026/2027).
+Pipeline end-to-end yang mengubah empat sumber data mentah yang berbeda format, resolusi, dan satuan menjadi **satu dataset bersih sel-grid × hari** untuk enam provinsi rawan karhutla (Riau, Jambi, Sumatera Selatan, Kalimantan Barat, Kalimantan Tengah, Kalimantan Selatan), periode 1 Januari – 30 September 2026.
 
-> ⚠️ **Status penting:** kode sudah diuji end-to-end memakai **data SINTETIS** (`--demo`). Data asli DIMAS-TI belum pernah dijalankan
-> di sini (hanya daftar berkasnya yang terlihat). Jalankan pada data asli, baca pesan error bila ada nama kolom yang berbeda
-> (perbaiki di `scripts/pipeline/config.py`), dan **tafsirkan hasil asli Anda sendiri**. Hasil/angka demo tidak boleh dikumpulkan.
+**Tim:** Ghita Natasha Putri · Sabrina Matrza Aulia · Lady Puspa Khansa Yuasa — Kelas INT25 — Kelompok: *(isi)*
 
-## 1. Mulai di VS Code (5 menit)
+## Hasil ringkas
+
+| Indikator | Nilai |
+|---|---|
+| Unit pengamatan | 22.553 sel grid (±5 km) × 273 hari = **6.156.969 baris**, 39 kolom |
+| Kunci integrasi | `cell_id + date`, 0 duplikasi, join `one_to_one` |
+| Missing value | 307.944 nilai cuaca diimputasi dengan *forward-fill* per sel (dipilih dari 6 strategi yang diuji) |
+| Outlier | IQR + Isolation Forest; nilai ekstrem valid dipertahankan dan diberi penanda |
+| Target | ada hotspot dalam 7 hari ke depan (proporsi positif keseluruhan 6,5%) |
+| Pembuktian kegunaan data | LightGBM PR-AUC **0,659** vs baseline prevalensi 0,201 (split temporal: latih s.d. Juli, validasi Agustus, uji September) |
+| Integritas data mentah | SHA-256 file mentah sebelum = sesudah pipeline |
+
+Catatan: prevalensi positif data latih 1,8% sedangkan data uji 20,1% (September adalah puncak musim kebakaran), sehingga ada pergeseran distribusi. Klasifikasi dipakai sebagai bukti kelayakan data, bukan tujuan utama.
+
+## Sumber data
+
+| Sumber | Isi | Penyedia |
+|---|---|---|
+| NASA FIRMS | titik panas (hotspot) | NASA |
+| CHIRPS | curah hujan harian | Climate Hazards Center, UC Santa Barbara |
+| ERA5-Land | suhu, titik embun, kelembapan tanah, angin | Copernicus / ECMWF |
+| geoBoundaries | batas provinsi | geoBoundaries (William & Mary geoLab) |
+
+CHIRPS dan ERA5-Land diekstrak melalui Google Earth Engine. **Data mentah dan dataset bersih lengkap tidak disertakan di repositori ini** karena ukurannya (>1 GB); lihat bagian *Menjalankan dengan data asli*.
+
+## Alur pipeline (10 tahap)
+
+| Tahap | Modul (`scripts/pipeline/`) | Keluaran utama |
+|---|---|---|
+| 1 Ingestion + provenance (SHA-256) | `s01_ingest.py` | `outputs/quality_control/provenance_raw.json` |
+| 2 Profiling & audit kualitas | `s02_profiling.py` | `outputs/profiling/` |
+| 3 Standardisasi, cleaning, missing values | `s03_cleaning.py` | `outputs/tables/perbandingan_strategi_imputasi.csv` |
+| 4 Integrasi spasial-temporal | `s04_integration.py` | `data/interim/04_integrated.parquet` |
+| 5 Deteksi & penanganan outlier | `s05_outliers.py` | `outputs/tables/outlier_*.csv` |
+| 6 Normalisasi & scaling | `s06_scaling.py` | `outputs/quality_control/scaler_params_train_only.json` |
+| 7 Feature engineering, reshaping, seleksi fitur | `s07_features.py` | `outputs/tables/seleksi_fitur.csv` |
+| 8 EDA & analisis korelasi | `s08_eda_corr.py` | `outputs/figures/heatmap_korelasi_*.png` |
+| 9 Clean dataset & kamus data | `s09_export.py` | `data/cleaned/` |
+| 10 Klasifikasi (analisis lanjutan) | `s10_classification.py` | `outputs/klasifikasi_metrik.json` |
+
+Prinsip metodologis: fitur historis hanya memakai data sebelum tanggal pengamatan (`shift(1)` lalu rolling), split bersifat temporal dengan jeda 7 hari, dan seluruh statistik imputasi/scaling dihitung dari periode latih saja. Semua parameter ada di `scripts/pipeline/config.py`.
+
+## Menjalankan
+
 ```bash
-# buka folder ini di VS Code: File > Open Folder > uas_data_wrangling
 python -m venv .venv
-.venv\Scripts\activate            # Windows   |   source .venv/bin/activate  (Mac/Linux)
+.venv\Scripts\activate              # Windows   |   source .venv/bin/activate  (Mac/Linux)
 pip install -r requirements.txt
-# VS Code: Ctrl+Shift+P > "Python: Select Interpreter" > pilih .venv
 ```
-Pasang ekstensi yang disarankan (VS Code akan menawarkan): Python, Jupyter.
 
-## 2. Uji coba dulu (data sintetis, ±1 menit)
+**Uji cepat dengan data sintetis** (tanpa data asli, ±1 menit; hanya untuk memeriksa kode):
 ```bash
 python scripts/run_pipeline.py --demo
-pytest -q                          # 8 tes: kunci unik, leakage, split temporal, dll.
+pytest -q                           # 8 tes: kunci unik, anti-leakage, split temporal, dll.
 ```
-Hasil demo ada di `data/demo/` (terpisah dari folder hasil asli).
 
-## 3. Pakai data asli
-```bash
-# salin data mentah dari proyek DIMAS-TI (tidak mengubah aslinya); persempit bila terlalu besar
-python scripts/copy_raw_from_dimasti.py --root "D:/DIMAS-TI/karhutla" --provinces riau jambi --date-from 2026-06-01
-python scripts/run_pipeline.py
-```
-Lalu buka `notebooks/Data_Wrangling_Karhutla_2026.ipynb`, **Run All**, dan isi kotak *ISI* (keputusan + interpretasi).
-Debug: tombol ▶ di VS Code (`Run and Debug` → "Pipeline - DATA ASLI").
+**Menjalankan dengan data asli:** letakkan data mentah di `data/raw_sample/`
 
-Data mentah yang dibutuhkan (`data/raw_sample/`):
 | Folder | Isi |
 |---|---|
-| `firms/` | CSV FIRMS (kolom standar: latitude, longitude, acq_date, acq_time, frp, confidence, satellite, …) |
-| `gee/` | CSV ekspor GEE: CHIRPS (hujan) + ERA5-Land (suhu, titik embun, kelembapan tanah, angin u/v) per `cell_id`/`date` |
+| `firms/` | CSV FIRMS |
+| `gee/` | CSV ekspor GEE (CHIRPS + ERA5-Land per sel-tanggal) |
 | `boundary/` | zip/geojson geoBoundaries ADM1 Indonesia |
-| `static/` | `grid.csv` (cell_id, lat, lon, province) — opsional; bila kosong, grid dibangun dari batas wilayah |
+| `static/` | `grid.csv` (cell_id, lat, lon, province) — opsional |
 
-## 4. Peta pipeline
-| Tahap | Modul (`scripts/pipeline/`) | Output utama | Proposal |
-|---|---|---|---|
-| 1 Ingestion + provenance | `s01_ingest.py` | `outputs/quality_control/provenance_raw.json` | 3.2 |
-| 2 Profiling | `s02_profiling.py` | `outputs/profiling/*` | 3.3 |
-| 3 Standardisasi, cleaning, missing | `s03_cleaning.py` | `outputs/tables/perbandingan_strategi_imputasi.csv` | 3.4 |
-| 4 Integrasi spasial-temporal | `s04_integration.py` | `data/interim/04_integrated.parquet` | 3.5 |
-| 5 Outlier | `s05_outliers.py` | `outputs/tables/outlier_*.csv` | 3.6 |
-| 6 Scaling | `s06_scaling.py` | `outputs/quality_control/scaler_params_train_only.json` | 3.7 |
-| 7 Fitur, reshaping, seleksi | `s07_features.py` | `outputs/tables/seleksi_fitur.csv` | 3.8 |
-| 8 EDA & korelasi | `s08_eda_corr.py` | `outputs/figures/heatmap_korelasi_*.png` | 3.9 |
-| 9 Clean dataset | `s09_export.py` | `data/cleaned/dataset_karhutla_2026_clean.parquet`, `kamus_data.csv` | 3.10 |
-| 10 Klasifikasi | `s10_classification.py` | `outputs/klasifikasi_metrik.json` | 3.11 |
-
-Semua parameter (resolusi grid, aturan domain, horizon, tanggal split, alias kolom) ada di `scripts/pipeline/config.py`.
-
-## 5. Dokumen pendukung (`docs/`)
-1. `01_GAP_ANALISIS.md` — apa yang kurang di proposal dibanding panduan, dan risikonya
-2. `02_PEMETAAN_DIMASTI_KE_UAS.md` — file DIMAS-TI mana yang diambil / diabaikan
-3. `03_ALUR_PRESENTASI_8_MENIT.md` — slide demi slide + pembagian waktu
-4. `04_CHEAT_SHEET_TANYA_JAWAB.md` — 32 pertanyaan teori/kode yang mungkin ditanyakan
-5. `05_CHECKLIST_PENGUMPULAN.md` — aturan arsip & berkas wajib
-6. `06_KONTRIBUSI_ANGGOTA.md` — template pembagian & bukti kontribusi
-7. `07_KERANGKA_LAPORAN.md` — kerangka laporan PDF
-
-## 6. Struktur folder
+```bash
+python scripts/run_pipeline.py
 ```
-uas_data_wrangling/
-├── data/{raw_sample, interim, cleaned}   ├── notebooks/Data_Wrangling_Karhutla_2026.ipynb
-├── scripts/{run_pipeline.py, make_demo_data.py, copy_raw_from_dimasti.py, pipeline/}
-├── outputs/{profiling, figures, quality_control, tables}   ├── tests/   ├── docs/
-└── laporan/   presentasi/            (tempat PDF & PPT)
+Lalu buka `notebooks/Data_Wrangling_Karhutla_2026.ipynb` dan **Run All**. Nama kolom yang berbeda dapat disesuaikan di `config.py` (`FIRMS_ALIASES`, `GEE_ALIASES`).
+
+## Struktur folder
 ```
+├── data/{raw_sample, interim, cleaned}     (isi data tidak disertakan di GitHub)
+├── notebooks/Data_Wrangling_Karhutla_2026.ipynb
+├── scripts/{run_pipeline.py, make_demo_data.py, copy_raw_from_dimasti.py, isi_notebook.py, pipeline/}
+├── outputs/{profiling, figures, quality_control, tables}
+├── tests/          docs/          laporan/          presentasi/
+```
+
+## Dokumentasi pendukung (`docs/`)
+`01_GAP_ANALISIS` · `02_PEMETAAN_DIMASTI_KE_UAS` · `03_ALUR_PRESENTASI_8_MENIT` · `04_CHEAT_SHEET_TANYA_JAWAB` · `05_CHECKLIST_PENGUMPULAN` · `06_KONTRIBUSI_ANGGOTA` · `07_KERANGKA_LAPORAN`
+
+## Asal proyek dan pemanfaatan AI
+Pipeline ini mengadaptasi alur data dari penelitian sebelumnya (DIMAS-TI) dan **dijalankan ulang dari data mentah** untuk project ini; angka penelitian lama hanya dipakai sebagai rujukan pembanding. Kerangka kode pipeline disusun dengan bantuan asisten AI (Claude, Anthropic); seluruh kode dijalankan, diperiksa, dan hasilnya ditafsirkan oleh tim.
